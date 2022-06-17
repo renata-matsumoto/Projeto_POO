@@ -4,18 +4,14 @@ class URL
 
     def initialize(url)
         @url = url
-        validation
-        if validation == false 
-            exit
-        else 
-            @prefix = ENV.fetch('APP_WEBSITE','http://www.higirls.com')
-            @SHORT_URL_KEY_POSITION = 0
-            @ORIGINAL_URL_POSITION = 1
-        end       
-     
-    end
-
-    def validation
+        @prefix = ENV.fetch('APP_WEBSITE','http://www.higirls.com')
+        @SHORT_URL_KEY_POSITION = 0
+        @ORIGINAL_URL_POSITION = 1
+    end       
+    
+    
+    
+    def validation        
         begin
             unless @url.match(/^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix)
              raise StandardError, "Não foi possível encontrar sua URL."        
