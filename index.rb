@@ -11,7 +11,7 @@ consulta = gets.chomp.to_i
 case consulta
 
 when 1
-  puts "Digite a URI que deseja encurtar:"
+  puts "Digite a URL que deseja encurtar:"
   url = gets.chomp
   url1 = URL.new(url)
   if url1.validation == false 

@@ -13,7 +13,7 @@ class URL
     
     def validation        
         begin
-            unless @url.match(/^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix)
+            if !@url.match(/^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix)
              raise StandardError, "Não foi possível encontrar sua URL."        
             end
         rescue StandardError => e
